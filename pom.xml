@@ -55,7 +55,12 @@
             <artifactId>json</artifactId>
             <version>20250517</version>
         </dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+    </dependencies>
 
 	<build>
 		<plugins>
