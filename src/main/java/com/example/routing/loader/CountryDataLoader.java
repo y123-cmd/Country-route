@@ -32,7 +32,7 @@ public class CountryDataLoader {
 
         try (InputStream in = url.openStream()) {
             List<Country> countries = mapper.readValue(in, new TypeReference<List<Country>>() {
-            });
+            });// reads the json data, converts it into a list,tells jackson this is a lsit of countries
 
             for (Country c : countries) {
                 countryMap.put(c.getCca3(), c);
