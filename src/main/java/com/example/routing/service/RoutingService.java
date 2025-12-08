@@ -24,6 +24,9 @@ public class RoutingService {
         if (!countryMap.containsKey(origin) || !countryMap.containsKey(destination)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid country code");
         }
+        if (origin.equals(destination)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No land route found: origin and destination are the same");
+        }
 
         Queue<List<String>> queue = new LinkedList<>();
         Set<String> visited = new HashSet<>();
@@ -38,6 +41,7 @@ public class RoutingService {
             if (current.equals(destination)) {
                 return path;
             }
+
 
             for (String neighbour : countryMap.get(current).getBorders()) {
                 if (!visited.contains(neighbour)) {
