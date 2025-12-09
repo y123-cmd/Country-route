@@ -15,13 +15,13 @@ public class RoutingController {
 
     public RoutingController(RoutingService routingService) {
         this.routingService = routingService;
-    }
+    } //makes the class a routing controller
 
     @GetMapping("/{origin}/{destination}")
-    public Map<String, List<String>> getRoute(
-            @PathVariable String origin,
+    public Map<String, List<String>> getRoute( // converst the map to json for the https response
+            @PathVariable String origin, // takes origin and pass it to method as string
             @PathVariable String destination
     ) {
-        return Map.of("route", routingService.findRoute(origin, destination));
+        return Map.of("route", routingService.findRoute(origin, destination)); // service to find route
     }
 }
