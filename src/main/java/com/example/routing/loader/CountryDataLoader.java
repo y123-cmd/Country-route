@@ -36,7 +36,7 @@ public class CountryDataLoader {
 
             for (Country c : countries) {
                 countryMap.put(c.getCca3(), c);
-            } // stores all the countries in the map with a key
+            } // stores all the countries in the map with a key //maps
         }
 
 
