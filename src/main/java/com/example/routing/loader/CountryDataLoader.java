@@ -31,7 +31,7 @@ public class CountryDataLoader {
         URL url = uri.toURL();
 
         try (InputStream in = url.openStream()) {
-            List<Country> countries = mapper.readValue(in, new TypeReference<List<Country>>() {
+            List<Country> countries = mapper.readValue(in, new TypeReference<List<Country>>() { // we use array list easy for reading position of the countries in order
             });// reads the json data, converts it into a list,tells jackson this is a lsit of countries
 
             for (Country c : countries) {
