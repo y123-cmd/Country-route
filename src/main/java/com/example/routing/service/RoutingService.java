@@ -32,7 +32,7 @@ public class RoutingService {
         Set<String> visited = new HashSet<>();
 
         queue.add(List.of(origin));
-        visited.add(origin);
+        visited.add(origin); // bfs
 
         while (!queue.isEmpty()) {
             List<String> path = queue.poll();
